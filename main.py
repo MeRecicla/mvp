@@ -2,21 +2,23 @@ from flask import Flask
 from flask import request
 from flask import abort
 from flask import jsonify
+from flask_cors import CORS
 
 import companiesDB
 import objectsDB
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/objects/', methods = ['GET'])
 def get_all_objects():
-    records = objectsDB.get_all()
-    return jsonify(objects = records)
+    objects = objectsDB.get_all()
+    return jsonify(objects)
 
 @app.route('/object/<string:name>', methods = ['GET'])
 def get_object(name):
-    objs = objectsDB.get_by_name(name)
-    return jsonify(objects = objs)
+    objects = objectsDB.get_by_name(name)
+    return jsonify(objects)
 
 # TODO: finish
 @app.route('/object/', methods = ['POST'])
@@ -47,14 +49,14 @@ def delete_object():
 
 @app.route('/companies/', methods = ['GET'])
 def get_all_companies():
-    records = companiesDB.get_all()
-    return jsonify(companies = records)
+    companies = companiesDB.get_all()
+    return jsonify(companies)
 
 @app.route('/companies/<string:object_name>', methods = ['GET'])
 def get_companies(object_name):
     object_category = objectsDB.get_category(object_name)
     companies = companiesDB.get_by_category(object_category)
-    return jsonify(companies = companies)
+    return jsonify(companies)
 
 # TODO: finish
 @app.route('/company/', methods = ['POST'])
@@ -74,6 +76,7 @@ def delete_company():
     else:
         abort(400, 'ERROR: Must receive a json')
 
-@app.route('/')
+@app.route('/', methods = ['GET'])
 def test():
-    return 'Olá me recicla'
+    response = jsonify({'message': 'Oá Me-Recicla'})
+    return response
