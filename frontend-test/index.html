@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Me Recicla Boladão</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./css/styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+   <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h1>Me Recicla Boladão<small>(versão 0.1)</small></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-12 col-lg-offset-3">
+                    <h3>Digita aí o nome do objeto que você quer jogar fora jovem</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <input type="search" id="search_field" value="" class="form-control" placeholder="Nome do objeto">
+                </div>
+                <a id="search_button" class="btn btn-success glyphicon glyphicon-search"></a>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-striped table-bordered table-hover" id="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Rua</th>
+                                <th>Núero</th>
+                                <th>Bairro</th>
+                                <th>CEP</th>
+                                <th>Telefone</th>
+                                <th>Categorias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Conteúdo inserido dinamicamente -->
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <script src="./js/table.js"></script>
+    </body>
+</html>
