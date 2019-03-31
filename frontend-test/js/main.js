@@ -72,7 +72,7 @@ function clearTable() {
 
 function updateMapLocation(address) {
     $.getJSON(nominatimURL + address, function(data) {
-        const zoom = 15;
+        const zoom = 16;
         const location = [data[0].lat, data[0].lon];
         map.setView(location, zoom);
     });
@@ -82,8 +82,7 @@ function createLocationMarker(lat, lon, info) {
     const pinIcon = L.icon({
         iconUrl: './img/favicon-32x32.png',
         iconSize:     [32, 42],
-        iconAnchor:   [22, 94],
-        popupAnchor:  [-3, -76]
+        popupAnchor:  [0, -15]
     });
 
     L.marker([lat, lon], {icon: pinIcon}).addTo(markersLayer).bindPopup(info);
