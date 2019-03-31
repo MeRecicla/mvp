@@ -24,13 +24,11 @@ function populateTable(data) {
     for(let i = 0; i < len; i++) {
         const nome = data[i].nome;
         const categorias = data[i].categorias;
-        const rua = data[i].rua;
-        const numero = data[i].numero;
+        const endereco = data[i].endereco;
         const bairro = data[i].bairro;
-        const cep = data[i].cep;
         const telefone = data[i].telefone;
 
-        $('#table tbody').append("<tr><td>"+ nome +"</td><td>"+ rua +"</td><td>"+ numero +"</td><td>"+ bairro +"</td><td>"+ cep +"</td><td>"+ telefone +"</td><td>"+ categorias +"</td></tr>");
+        $('#table tbody').append("<tr><td>"+ nome +"</td><td>"+ endereco +"</td><td>"+ bairro +"</td><td>"+ telefone +"</td><td>"+ categorias +"</td></tr>");
     }
 }
 

@@ -1,7 +1,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-sheet_name = "merecicla-objects-teste"
+sheet_name = "ME RECICLA - Relação de objetos e categorias"
 credentials_file_path = './auth.json'
 sheet_header_index = 1
 
