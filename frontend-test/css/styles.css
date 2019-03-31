@@ -4,3 +4,22 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+#table {
+    margin-bottom: 10px;
+}
+
+#table td{
+    cursor: pointer; 
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    margin-top: 10px;
+    height: 480px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
